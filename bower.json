@@ -1,0 +1,22 @@
+{
+  "name": "notifications-app",
+  "description": "Part of 30 days of react tutorial",
+  "main": "src/index.js",
+  "authors": [
+    "Igor Pavlichenko <igor.pavlichenko@comon.pt>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/igor-pavlichenko/notifications-app",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.6",
+    "components-font-awesome": "^4.7.0"
+  }
+}
