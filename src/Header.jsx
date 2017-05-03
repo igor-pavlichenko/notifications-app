@@ -3,8 +3,8 @@ import './Header.css';
 
 class Header extends Component {
 
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
 			inputIsActive: false,
 		}
@@ -22,7 +22,7 @@ class Header extends Component {
 			<div className="header">
 				<div className="fa fa-bars fa-lg fa-fw"></div>
 
-				<span className="title">Timeline</span>
+				<span className="title">{this.props.title}</span>
 
 				<input type="text"
 						className={(this.state.inputIsActive ? "active" : "") + " searchInput"}
