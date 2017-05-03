@@ -3,6 +3,7 @@ import './App.css';
 
 import Header from './Header.jsx';
 import Content from './Content.jsx';
+import Clock from './Clock.jsx';
 
 class App extends Component {
 	render() {
@@ -31,6 +32,7 @@ class App extends Component {
 				<div className="panel">
 					<Header title="Timeline" />
 					<Content activities={activities} />
+					<Clock />
 				</div>
 			</div>
 		);
