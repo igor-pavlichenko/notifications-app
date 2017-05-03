@@ -18,6 +18,14 @@ class Header extends Component {
 	}
 
 	render() {
+		// Classes to add to the <input /> element
+    	let searchInputClasses = ["searchInput"];
+
+		// Update the class array if the state is visible
+		if (this.state.inputIsActive) {
+		searchInputClasses.push("active");
+		}
+
 		return (
 			<div className="header">
 				<div className="fa fa-bars fa-lg fa-fw"></div>
@@ -25,7 +33,7 @@ class Header extends Component {
 				<span className="title">{this.props.title}</span>
 
 				<input type="text"
-						className={(this.state.inputIsActive ? "active" : "") + " searchInput"}
+						className={searchInputClasses.join(' ')}
 						placeholder="Search..."/>
 
 				<div onClick={this.toggleInputIsActive} className="fa fa-search searchIcon fa-lg fa-fw"></div>
