@@ -8,7 +8,7 @@ class App extends Component {
 	render() {
 		const activities = [
 			{
-				timestamp: new Date().getTime(),
+				timestamp: Date.now(),
 				text: "Ate lunch",
 				user: {
 					id: 1, name: 'Nate',
@@ -17,7 +17,7 @@ class App extends Component {
 				comments: [{ from: 'Ari', text: 'Me too!' }]
 			},
 			{
-				timestamp: new Date().getTime(),
+				timestamp: Date.now(),
 				text: "Woke up early for a beautiful run",
 				user: {
 					id: 2, name: 'Ari',
