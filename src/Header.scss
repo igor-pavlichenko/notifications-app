@@ -1,0 +1,223 @@
+// @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600&subset=latin-ext');
+
+// @font-face {
+// 	font-family: BIG_JOHN;
+// 	src: url('fonts/BIG_JOHN.otf');
+// }
+
+// @font-face {
+// 	font-family: Slim_Joe;
+// 	src: url('fonts/Slim_Joe.otf');
+// }
+
+// media breakpoints DOWN
+$breakpoints-down: (
+	xs : ( max-width: 575px),
+	sm : ( max-width: 767px ),
+	md : ( max-width: 991px ),
+	lg : ( max-width: 1199px )
+) !default;
+// sass magic
+@mixin media-breakpoint-down($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints-down, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints-down, $breakpoint))} {
+      @content;
+    }
+  }
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints-down)}.";
+  }
+}
+
+
+// media breakpoints UP
+$breakpoints-up: (
+	sm : ( min-width: 576px ),
+	md : ( min-width: 768px ),
+	lg : ( min-width: 992px ),
+	xl : ( min-width: 1200px )
+) !default;
+// sass magic
+@mixin media-breakpoint-up($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints-up, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints-up, $breakpoint))} {
+      @content;
+    }
+  }
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints-up)}.";
+  }
+}
+
+
+
+// media breakpoints ONLY
+$breakpoints-only: (
+	xs : ( max-width: 575px ),
+	sm : ( min-width: 576px ) and ( max-width: 767px ),
+	md : ( min-width: 768px ) and ( max-width: 991px ),
+	lg : ( min-width: 992px ) and ( max-width: 1199px ),
+	xl : ( min-width: 1200px )
+) !default;
+// sass magic
+@mixin media-breakpoint-only($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints-only, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints-only, $breakpoint))} {
+      @content;
+    }
+  }
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints-only)}.";
+  }
+}
+
+
+
+$jet: #131516;
+$raven: #373D3F;
+$asher: #555F61;
+$stone: #707C80;
+$gray: #8C979A;
+$sterling: #A7B0B2;
+$heather: #C1C7C9;
+$pearl: #DADEDF;
+$lilia: #F2F3F4;
+
+$indigo: #0D3D56;
+$indigoLighter: mix(white, $indigo, 20%);
+$indigoLightest: mix(white, $indigo, 80%);
+
+$sophia: #0F5B78;
+$sophiaLighter: mix(white, $sophia, 20%);
+$sophiaLightest: mix(white, $sophia, 80%);
+
+$bootstrapDefault: #337ab7;
+
+$skye: #117899;
+$skyeLighter: mix(white, $skye, 20%);
+$skyeLightest: mix(white, $skye, 80%);
+
+$alice: #1496BB;
+$aliceLighter: mix(white, $alice, 20%);
+$aliceLightest: mix(white, $alice, 80%);
+
+$crayola: #1AC983;
+$crayolaLighter: mix(white, $crayola, 20%);
+$crayolaLightest: mix(white, $crayola, 80%);
+
+$jade: #00C46B;
+$jadeLighter: mix(white, $jade, 20%);
+$jadeLightest: mix(white, $jade, 80%);
+
+$malachite: #0CCE6B;
+
+$kelly: #A3B86C;
+$kellyLighter: mix(white, $kelly, 20%);
+$kellyLightest: mix(white, $kelly, 80%);
+
+$daisy: #EBC944;
+
+$amber: #EDAA38;
+$amberLighter: mix(white, $amber, 20%);
+
+$april: #F08C2D;
+$aprilLighter: mix(white, $april, 20%);
+$aprilLightest: mix(white, $april, 80%);
+
+$coral: #F26D21;
+$coralLighter: mix(white, $coral, 20%);
+$coralLightest: mix(white, $coral, 80%);
+
+$oriolesOrange: #FF5111;
+
+$rowan: #D94E20;
+
+$amaranth: #DB2955;
+$amaranthLighter: mix(white, $amaranth, 20%);
+$amaranthLightest: mix(white, $amaranth, 80%);
+
+$carmineRich: #DB0036;
+$carmineRichLighter: mix(white, $carmineRich, 20%);
+$carmineRichLightest: mix(white, $carmineRich, 80%);
+
+$redSalsa: #F92C4A;
+
+$ruby: #C02F1D;
+$rubyLighter: mix(white, $ruby, 20%);
+$rubyLightest: mix(white, $ruby, 80%);
+
+$accentColor: $oriolesOrange;
+
+.header {
+	width: 100%;
+	height: 48px;
+	background-color: $aliceLighter;
+	color: white;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 3px;
+	position: relative;
+
+	.title {
+		font-weight: 600;
+	}
+
+	.fa-bars {
+		padding-left: 20px;
+		cursor: pointer;
+	}
+	.fa-search {
+		padding-right: 20px;
+		cursor: pointer;
+	}
+
+	.searchInput {
+		border: 10px solid red;
+		box-sizing: border-box;
+		position: absolute;
+		right: 55px;
+		width: 200px;
+		height: 34px;
+		border-radius: 17px;
+		border: none;
+		background: #fff;
+		padding: 0 17px;
+		font-size: 13px;
+		color: #666;
+		-webkit-transition: all .3s ease-in-out;
+		transition: all .3s ease-in-out;
+		-webkit-transform: translateX(15px);
+				transform: translateX(15px);
+		opacity: 0;
+		pointer-events: none;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	.searchInput.active {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+		opacity: 1;
+		pointer-events: all
+	}
+}
+
+
