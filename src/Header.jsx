@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './Header.css';
 
 class Header extends Component {
@@ -19,11 +20,11 @@ class Header extends Component {
 
 	render() {
 		// Classes to add to the <input /> element
-    	let searchInputClasses = ["searchInput"];
+		let searchInputClasses = ["searchInput"];
 
 		// Update the class array if the state is visible
 		if (this.state.inputIsActive) {
-		searchInputClasses.push("active");
+			searchInputClasses.push("active");
 		}
 
 		return (
@@ -33,13 +34,21 @@ class Header extends Component {
 				<span className="title">{this.props.title}</span>
 
 				<input type="text"
-						className={searchInputClasses.join(' ')}
-						placeholder="Search..."/>
+					className={searchInputClasses.join(' ')}
+					placeholder="Search..." />
 
 				<div onClick={this.toggleInputIsActive} className="fa fa-search searchIcon fa-lg fa-fw"></div>
 			</div>
 		);
 	}
+}
+
+Header.propTypes = {
+	title: PropTypes.string,
+}
+
+Header.defaultProps = {
+	title: 'Github activity',
 }
 
 export default Header;
