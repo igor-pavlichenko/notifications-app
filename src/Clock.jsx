@@ -34,6 +34,13 @@ class Clock extends Component {
 		this.setUpdateInterval();
 	}
 
+	componentWillUnmount() {
+		if (this.interval) {
+			clearTimeout(this.interval);
+		}
+	}
+
+
 
 	render() {
 		// es6 destructuring.. same as hours = this.state.hours, etc
