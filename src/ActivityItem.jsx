@@ -8,17 +8,17 @@ class ActivityItem extends Component {
 			<div className="item">
 				<div className="avatar">
 					<img
-						alt={this.props.activity.text}
-						src={this.props.activity.user.avatar} />
-					{this.props.activity.user.name}
+						alt={this.props.activity.type}
+						src={this.props.activity.actor.avatar_url} />
+					{this.props.activity.actor.display_login}
 				</div>
 
 				<span className="time">
-					{this.props.activity.timestamp}
+					{this.props.activity.created_at}
 				</span>
-				<p>{this.props.activity.text}</p>
-				<div className="commentCount">
-					{this.props.activity.comments.length}
+				<p>{this.props.activity.payload.action} - {this.props.activity.type}</p>
+				<div className="right">
+					{this.props.activity.repo.name}
 				</div>
 			</div>
 		);
