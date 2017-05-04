@@ -22,6 +22,7 @@ class Container extends Component {
 
 	// Bound to the refresh button
 	refresh() {
+		console.log('refresh');
 		this.setState({ refreshing: true })
 	}
 
