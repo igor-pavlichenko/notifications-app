@@ -13,6 +13,11 @@ class Header extends Component {
 		}
 	}
 
+	submitForm = (val) => {
+		console.info('Header\'s submit');
+		this.props.onSearch(val);
+	}
+
 
 	render() {
 
@@ -22,7 +27,7 @@ class Header extends Component {
 
 				<span className="title">{this.props.title}</span>
 
-				<SearchForm onSubmit={this.props.onSubmit} />
+				<SearchForm onSubmit={this.submitForm} />
 			</div>
 		);
 	}
@@ -30,10 +35,12 @@ class Header extends Component {
 
 Header.propTypes = {
 	title: PropTypes.string,
+	onSearch: PropTypes.func,
 }
 
 Header.defaultProps = {
 	title: 'Github activity',
+	onSearch: () => { console.info('header\'s onSearch') }
 }
 
 export default Header;
