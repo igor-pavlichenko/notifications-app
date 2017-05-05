@@ -62,7 +62,8 @@ class SearchForm extends Component {
 					type="search"
 					className={searchInputClasses.join(' ')}
 					onChange={this.updateSearchInput}
-					placeholder="Search..." />
+					placeholder="Search..."
+					onKeyUp={this.submitForm} />
 
 				<div onClick={this.toggleInputIsActive} className="fa fa-search searchIcon fa-lg fa-fw"></div>
 			</form>

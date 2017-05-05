@@ -4,21 +4,23 @@ import './ActivityItem.css';
 class ActivityItem extends Component {
 
 	render() {
+		const activity = this.props.activity;
+
 		return (
 			<div className="item">
 				<div className="avatar">
 					<img
-						alt={this.props.activity.type}
-						src={this.props.activity.actor.avatar_url} />
-					{this.props.activity.actor.display_login}
+						alt={activity.type}
+						src={activity.actor.avatar_url} />
+					{activity.actor.display_login}
 				</div>
 
 				<span className="time">
-					{this.props.activity.created_at}
+					{activity.created_at}
 				</span>
-				<p>{this.props.activity.payload.action} - {this.props.activity.type}</p>
+				<p>[{activity.actor.display_login}] {activity.payload.action} - {activity.type}</p>
 				<div className="right">
-					{this.props.activity.repo.name}
+					{activity.repo.name}
 				</div>
 			</div>
 		);
